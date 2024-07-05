@@ -54,9 +54,23 @@ _G.AutoPushupV2 = True
 --Função
 function AutoPushupV2()
 while _G.AutoPushupV2 == true do
-       game:GetService("ReplicatedStorage").Remotes.Pushup:FireServer()
-wait(5.5)
-end
+    local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
+
+    local function task()
+        local Event = ReplicatedStorage.Remotes.Pushup
+        Event:FireServer()
+    end
+    
+    
+    while true do
+        
+        for i = 1, 4 do
+            task()
+            wait()  
+        end
+        wait(1.5)  
+    end
 end
 
 --Valor
@@ -76,9 +90,23 @@ _G.AutoSitupV2 = True
 --Função
 function AutoSitupV2()
 while _G.AutoSitupV2 == true do
-       game:GetService("ReplicatedStorage").Remotes.Situp:FireServer()
-wait(5.5)
-end
+    local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
+
+    local function task()
+        local Event = game:GetService("ReplicatedStorage").Remotes.Situp
+        Event:FireServer()
+    end
+    
+    
+    while true do
+    
+        for i = 1, 4 do
+            task()
+            wait()  
+        end
+        wait(1.5)  
+    end
 end
 
 --Valor
@@ -98,15 +126,23 @@ _G.BenchToggle2 = True
 --Função
 function BenchToggle2()
 while _G.BenchToggle2 == true do
-game:GetService("ReplicatedStorage").Remotes.BenchToggle:FireServer()
-game:GetService("ReplicatedStorage").Remotes.BenchToggle:FireServer()
-game:GetService("ReplicatedStorage").Remotes.BenchToggle:FireServer()
-game:GetService("ReplicatedStorage").Remotes.BenchToggle:FireServer()
-game:GetService("ReplicatedStorage").Remotes.BenchToggle:FireServer()
-game:GetService("ReplicatedStorage").Remotes.BenchToggle:FireServer()
-game:GetService("ReplicatedStorage").Remotes.BenchToggle:FireServer()
-wait()
-end
+    local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
+
+    local function task()
+        local Event = ReplicatedStorage.Remotes.BenchToggle
+        Event:FireServer()
+    end
+    
+    
+    while true do
+        
+        for i = 1, 4 do
+            task()
+            wait()  
+        end
+        wait(1.5)  
+    end
 end
 
 --Valor
@@ -126,8 +162,23 @@ _G.DumbbellV2 = True
 --Função
 function DumbbellV2()
 while _G.DumbbellV2 == true do
-game:GetService("ReplicatedStorage").Remotes.Dumbbell:FireServer()
-wait(5.5)
+    local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
+
+    local function task()
+        local Event = game:GetService("ReplicatedStorage").Remotes.Dumbbell
+        Event:FireServer()
+    end
+    
+    
+    while true do
+    
+        for i = 1, 4 do
+            task()
+            wait()  
+        end
+        wait(1.5)  
+    end
 end
 end
 
@@ -151,18 +202,27 @@ ScriptsPRIVTab:AddToggle({
 ScriptsPRIVTab:AddButton({
     Name = "Auto-Hits",
     Callback = function()
-local args = {
-    [1] = "Left Punch"
-}
-local args = {
-    [1] = "Right Punch"
-}
-local Event = game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Attack")
-Event:FireServer(unpack(args))
-local Event = game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Attack")
-Event:FireServer(unpack(args))
-wait()
-    end
+        local player = game.Players.LocalPlayer
+        local character = player.Character or player.CharacterAdded:Wait()
+        local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+        
+        local spinSpeed = 1000
+        
+        game:GetService("RunService").RenderStepped:Connect(function(deltaTime)
+            humanoidRootPart.CFrame = humanoidRootPart.CFrame * CFrame.Angles(0, math.rad(spinSpeed * deltaTime), 0)
+        end)
+        
+        --STR
+        while wait() do
+        local A_1 = "Left Punch"
+        local Event = game:GetService("ReplicatedStorage").Remotes.Attack
+        Event:FireServer(A_1)
+        
+        local A_1 = "Right Punch"
+        local Event = game:GetService("ReplicatedStorage").Remotes.Attack
+        Event:FireServer(A_1)
+        end
+        
 })
 --ScriptsPRIV
 local ScriptsPRIVTab = Window:MakeTab({
@@ -222,14 +282,23 @@ ScriptsPRIVTab:AddToggle({
 ScriptsPRIVTab:AddButton({
     Name = "BenchTOggle2",
     Callback = function()
-        game:GetService("ReplicatedStorage").Remotes.BenchToggle:FireServer()
-        game:GetService("ReplicatedStorage").Remotes.BenchToggle:FireServer()
-        game:GetService("ReplicatedStorage").Remotes.BenchToggle:FireServer()
-        game:GetService("ReplicatedStorage").Remotes.BenchToggle:FireServer()
-        game:GetService("ReplicatedStorage").Remotes.BenchToggle:FireServer()
-        game:GetService("ReplicatedStorage").Remotes.BenchToggle:FireServer()
-wait()
-    end
+        local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
+
+        local function task()
+            local Event = ReplicatedStorage.Remotes.BenchToggle
+            Event:FireServer()
+        end
+        
+        
+        while true do
+            
+            for i = 1, 4 do
+                task()
+                wait()  
+            end
+            wait(1.5)  
+        end
 })
 ScriptsPRIVTab:AddToggle({
     Name = "Dumbbell",
