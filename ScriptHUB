@@ -215,7 +215,6 @@ ScriptsPRIVTab:AddToggle({
 })
 ScriptsPRIVTab:AddButton({
     Name = "BenchToggle2",
-    Default = false,
     Callback = function(Value)
         _G.BenchToggle2 = Value
         BenchToggle2()
