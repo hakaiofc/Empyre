@@ -143,11 +143,11 @@ ScriptsPRIVTab:AddToggle({
     end
 })
 ScriptsPRIVTab:AddToggle({
-    Name = "AutoBenchOP",
+    Name = "BenchToggle2",
     Default = false,
     Callback = function(Value)
-        _G.AutoBenchOP = Value
-        AutoBenchOP()
+        _G.BenchToggle2 = Value
+        BenchToggle2()
     end
 })
 ScriptsPRIVTab:AddButton({
