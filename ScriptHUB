@@ -102,6 +102,7 @@ game:GetService("ReplicatedStorage").Remotes.BenchToggle:FireServer()
 wait()
 end
 end
+
 --Valor
 _G.Dumbbell = True
 
@@ -165,7 +166,7 @@ Event:FireServer(unpack(args))
 wait()
     end
 })
-criptsPRIVTab:AddButton({
+ScriptsPRIVTab:AddButton({
     Name = "Auto-BenchOP",
     Callback = function()
 game:GetService("ReplicatedStorage").Remotes.BenchToggle:FireServer()
