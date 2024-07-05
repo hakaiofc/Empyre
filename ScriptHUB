@@ -142,14 +142,6 @@ ScriptsPRIVTab:AddToggle({
         AutoHits()
     end
 })
-ScriptsPRIVTab:AddToggle({
-    Name = "BenchToggle2",
-    Default = false,
-    Callback = function(Value)
-        _G.BenchToggle2 = Value
-        BenchToggle2()
-    end
-})
 ScriptsPRIVTab:AddButton({
     Name = "Auto-Hits",
     Callback = function()
