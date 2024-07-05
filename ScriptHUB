@@ -213,7 +213,7 @@ ScriptsPRIVTab:AddToggle({
         BenchToggle()
     end
 })
-ScriptsPRIVTab:AddToggle({
+ScriptsPRIVTab:AddButton({
     Name = "BenchToggle2",
     Default = false,
     Callback = function(Value)
