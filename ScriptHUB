@@ -99,6 +99,12 @@ _G.BenchToggle2 = True
 function BenchToggle2()
 while _G.BenchToggle2 == true do
 game:GetService("ReplicatedStorage").Remotes.BenchToggle:FireServer()
+game:GetService("ReplicatedStorage").Remotes.BenchToggle:FireServer()
+game:GetService("ReplicatedStorage").Remotes.BenchToggle:FireServer()
+game:GetService("ReplicatedStorage").Remotes.BenchToggle:FireServer()
+game:GetService("ReplicatedStorage").Remotes.BenchToggle:FireServer()
+game:GetService("ReplicatedStorage").Remotes.BenchToggle:FireServer()
+game:GetService("ReplicatedStorage").Remotes.BenchToggle:FireServer()
 wait()
 end
 end
