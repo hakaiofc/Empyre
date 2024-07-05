@@ -55,7 +55,7 @@ _G.AutoPushupV2 = True
 function AutoPushupV2()
 while _G.AutoPushupV2 == true do
        game:GetService("ReplicatedStorage").Remotes.Pushup:FireServer()
-wait(3.5)
+wait(5.5)
 end
 end
 
@@ -77,7 +77,7 @@ _G.AutoSitupV2 = True
 function AutoSitupV2()
 while _G.AutoSitupV2 == true do
        game:GetService("ReplicatedStorage").Remotes.Situp:FireServer()
-wait(3.5)
+wait(5.5)
 end
 end
 
@@ -88,8 +88,86 @@ _G.BenchToggle = True
 function BenchToggle()
 while _G.BenchToggle == true do
 game:GetService("ReplicatedStorage").Remotes.BenchToggle:FireServer()
+wait(0.485)
+end
+end
+
+--Valor
+_G.BenchToggle2 = True
+
+--Função
+function BenchToggle2()
+while _G.BenchToggle2 == true do
 game:GetService("ReplicatedStorage").Remotes.BenchToggle:FireServer()
-game:GetService("ReplicatedStorage").Remotes.BenchToggle:FireServer()
+wait()
+end
+end
+--Valor
+_G.Dumbbell = True
+
+--Função
+function Dumbbell()
+while _G.Dumbbell == true do
+game:GetService("ReplicatedStorage").Remotes.Dumbbell:FireServer()
+wait(0.485)
+end
+end
+
+--Valor
+_G.DumbbellV2 = True
+
+--Função
+function DumbbellV2()
+while _G.DumbbellV2 == true do
+game:GetService("ReplicatedStorage").Remotes.Dumbbell:FireServer()
+wait(5.5)
+end
+end
+
+--ScriptsPRIV
+local ScriptsPRIVTab = Window:MakeTab({
+    Name = "ScriptsPRIV",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+local Section = ScriptsPRIVTab:AddSection({
+    Name = "Auto-Farm"
+})
+ScriptsPRIVTab:AddToggle({
+    Name = "AutoHits",
+    Default = false,
+    Callback = function(Value)
+        _G.AutoHits = Value
+        AutoHits()
+    end
+})
+ScriptsPRIVTab:AddToggle({
+    Name = "AutoBenchOP",
+    Default = false,
+    Callback = function(Value)
+        _G.AutoBenchOP = Value
+        AutoBenchOP()
+    end
+})
+ScriptsPRIVTab:AddButton({
+    Name = "Auto-Hits",
+    Callback = function()
+local args = {
+    [1] = "Left Punch"
+}
+local args = {
+    [1] = "Right Punch"
+}
+local Event = game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Attack")
+Event:FireServer(unpack(args))
+local Event = game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Attack")
+Event:FireServer(unpack(args))
+wait()
+    end
+})
+criptsPRIVTab:AddButton({
+    Name = "Auto-BenchOP",
+    Callback = function()
 game:GetService("ReplicatedStorage").Remotes.BenchToggle:FireServer()
 game:GetService("ReplicatedStorage").Remotes.BenchToggle:FireServer()
 game:GetService("ReplicatedStorage").Remotes.BenchToggle:FireServer()
@@ -118,49 +196,18 @@ game:GetService("ReplicatedStorage").Remotes.BenchToggle:FireServer()
 game:GetService("ReplicatedStorage").Remotes.BenchToggle:FireServer()
 game:GetService("ReplicatedStorage").Remotes.BenchToggle:FireServer()
 wait()
-end
-end
-
---Valor
-_G.Dumbbell = True
-
---Função
-function Dumbbell()
-while _G.Dumbbell == true do
-game:GetService("ReplicatedStorage").Remotes.Dumbbell:FireServer()
-wait(0.485)
-end
-end
-
---Valor
-_G.DumbbellV2 = True
-
---Função
-function DumbbellV2()
-while _G.DumbbellV2 == true do
-game:GetService("ReplicatedStorage").Remotes.Dumbbell:FireServer()
-wait(3.5)
-end
-end
-
---Jogador
-local JogadorTab = Window:MakeTab({
-    Name = "Jogador",
+    end
+})
+--ScriptsPRIV
+local ScriptsPRIVTab = Window:MakeTab({
+    Name = "ScriptsPRIV",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
 })
-local Section = JogadorTab:AddSection({
-    Name = "AutoHits"
+local Section = ScriptsPRIVTab:AddSection({
+    Name = "Script-PushUps"
 })
-JogadorTab:AddToggle({
-    Name = "AutoHits",
-    Default = false,
-    Callback = function(Value)
-        _G.AutoHits = Value
-        AutoHits()
-    end
-})
-JogadorTab:AddToggle({
+ScriptsPRIVTab:AddToggle({
     Name = "AutoPushup",
     Default = false,
     Callback = function(Value)
@@ -168,7 +215,7 @@ JogadorTab:AddToggle({
         AutoPushup()
     end
 })
-JogadorTab:AddToggle({
+ScriptsPRIVTab:AddToggle({
     Name = "AutoPushupV2",
     Default = false,
     Callback = function(Value)
@@ -176,7 +223,10 @@ JogadorTab:AddToggle({
         AutoPushupV2()
     end
 })
-JogadorTab:AddToggle({
+local Section = ScriptsPRIVTab:AddSection({
+    Name = "Script-Situps"
+})
+ScriptsPRIVTab:AddToggle({
     Name = "AutoSitup",
     Default = false,
     Callback = function(Value)
@@ -184,7 +234,7 @@ JogadorTab:AddToggle({
         AutoSitup()
     end
 })
-JogadorTab:AddToggle({
+ScriptsPRIVTab:AddToggle({
     Name = "AutoSitupV2",
     Default = false,
     Callback = function(Value)
@@ -192,8 +242,10 @@ JogadorTab:AddToggle({
         AutoSitupV2()
     end
 })
-
-JogadorTab:AddToggle({
+local Section = ScriptsPRIVTab:AddSection({
+    Name = "Script-Pesos"
+})
+ScriptsPRIVTab:AddToggle({
     Name = "BenchToggle",
     Default = false,
     Callback = function(Value)
@@ -201,7 +253,15 @@ JogadorTab:AddToggle({
         BenchToggle()
     end
 })
-JogadorTab:AddToggle({
+ScriptsPRIVTab:AddToggle({
+    Name = "BenchToggle2",
+    Default = false,
+    Callback = function(Value)
+        _G.BenchToggle2 = Value
+        BenchToggle2()
+    end
+})
+ScriptsPRIVTab:AddToggle({
     Name = "Dumbbell",
     Default = false,
     Callback = function(Value)
@@ -209,7 +269,7 @@ JogadorTab:AddToggle({
         Dumbbell()
     end
 })
-JogadorTab:AddToggle({
+ScriptsPRIVTab:AddToggle({
     Name = "DumbbellV2",
     Default = false,
     Callback = function(Value)
@@ -217,7 +277,16 @@ JogadorTab:AddToggle({
         DumbbellV2()
     end
 })
-JogadorTab:AddButton({
+--Infinite-Yield
+local InfiniteYieldTab = Window:MakeTab({
+    Name = "Infinite-Yield",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+local Section = InfiniteYieldTab:AddSection({
+    Name = "Infinite-Yield"
+})
+InfiniteYieldTab:AddButton({
     Name = "InfiniteYield",
     Callback = function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/hakaiofc/EdgeIYinfiniteyield/main/mastersource'))()
