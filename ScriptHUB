@@ -217,6 +217,11 @@ ScriptsPRIVTab:AddButton({
     Name = "BenchTOggle2",
     Callback = function()
         game:GetService("ReplicatedStorage").Remotes.BenchToggle:FireServer()
+        game:GetService("ReplicatedStorage").Remotes.BenchToggle:FireServer()
+        game:GetService("ReplicatedStorage").Remotes.BenchToggle:FireServer()
+        game:GetService("ReplicatedStorage").Remotes.BenchToggle:FireServer()
+        game:GetService("ReplicatedStorage").Remotes.BenchToggle:FireServer()
+        game:GetService("ReplicatedStorage").Remotes.BenchToggle:FireServer()
 wait()
     end
 })
