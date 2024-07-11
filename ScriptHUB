@@ -103,13 +103,7 @@ _G.BenchToggle2 = True
 function BenchToggle2()
 while _G.BenchToggle2 == true do
 game:GetService("ReplicatedStorage").Remotes.BenchToggle:FireServer()
-game:GetService("ReplicatedStorage").Remotes.BenchToggle:FireServer()
-game:GetService("ReplicatedStorage").Remotes.BenchToggle:FireServer()
-game:GetService("ReplicatedStorage").Remotes.BenchToggle:FireServer()
-game:GetService("ReplicatedStorage").Remotes.BenchToggle:FireServer()
-game:GetService("ReplicatedStorage").Remotes.BenchToggle:FireServer()
-game:GetService("ReplicatedStorage").Remotes.BenchToggle:FireServer()
-wait()
+wait(0.485)
 end
 end
 
@@ -153,9 +147,10 @@ ScriptsPRIVTab:AddToggle({
     end
 })
 ScriptsPRIVTab:AddButton({
-    Name = "Auto-Hits",
+    Name = "Auto-Strength",
     Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/hakaiofc/Punch/main/STR"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/hakaiofc/Dumbell/main/OP"))()
 wait()
 end
 })
