@@ -155,18 +155,7 @@ ScriptsPRIVTab:AddToggle({
 ScriptsPRIVTab:AddButton({
     Name = "Auto-Hits",
     Callback = function()
-local args = {
-    [1] = "Left Punch"
-}
-local args = {
-    [1] = "Right Punch"
-}
-local Event = game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Attack")
-Event:FireServer(unpack(args))
-local Event = game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Attack")
-Event:FireServer(unpack(args))
-local Event = game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Attack")
-Event:FireServer(unpack(args))
+loadstring(game:HttpGet("https://raw.githubusercontent.com/hakaiofc/Punch/main/STR"))()
 wait()
 end
 })
