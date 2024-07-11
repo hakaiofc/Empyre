@@ -151,6 +151,7 @@ ScriptsPRIVTab:AddToggle({
 ScriptsPRIVTab:AddButton({
     Name = "Auto-Hits",
     Callback = function()
+while wait()do
 local args = {
     [1] = "Left Punch"
 }
@@ -161,7 +162,8 @@ local Event = game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitF
 Event:FireServer(unpack(args))
 local Event = game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Attack")
 Event:FireServer(unpack(args))
-wait()
+local Event = game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Attack")
+Event:FireServer(unpack(args))
     end
 })
 --ScriptsPRIV
