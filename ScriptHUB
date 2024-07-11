@@ -166,6 +166,7 @@ local Event = game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitF
 Event:FireServer(unpack(args))
 wait()
     end
+end
 })
 --ScriptsPRIV
 local ScriptsPRIVTab = Window:MakeTab({
