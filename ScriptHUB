@@ -215,13 +215,6 @@ ScriptsPRIVTab:AddToggle({
         BenchToggle()
     end
 })
-ScriptsPRIVTab:AddButton({
-    Name = "BenchTOggle2",
-    Callback = function()
-        game:GetService("ReplicatedStorage").Remotes.BenchToggle:FireServer()
-wait()
-    end
-})
 ScriptsPRIVTab:AddToggle({
     Name = "Dumbbell",
     Default = false,
