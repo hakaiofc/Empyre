@@ -150,7 +150,7 @@ ScriptsPRIVTab:AddButton({
     Name = "Auto-Strength",
     Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/hakaiofc/Punch/main/STR"))()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/hakaiofc/Dumbell/main/OP"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/hakaiofc/Dumbell2/main/OP"))()
 wait()
 end
 })
