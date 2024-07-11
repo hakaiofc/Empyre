@@ -152,10 +152,11 @@ ScriptsPRIVTab:AddButton({
 loadstring(game:HttpGet("https://raw.githubusercontent.com/hakaiofc/Punch/main/STR"))()
 wait()
 end
+})
 ScriptsPRIVTab:AddButton({
     Name = "Auto-Dumbell",
     Callback = function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/hakaiofc/Dumbell2/main/OP"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/hakaiofc/Dumbell2/main/OP"))()
 wait()
 end
 })
