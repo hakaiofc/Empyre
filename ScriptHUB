@@ -157,6 +157,7 @@ ScriptsPRIVTab:AddButton({
     Callback = function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/hakaiofc/Dumbell2/main/OP"))()
 wait()
+end
 })
 --ScriptsPRIV
 local ScriptsPRIVTab = Window:MakeTab({
@@ -216,11 +217,6 @@ ScriptsPRIVTab:AddToggle({
 ScriptsPRIVTab:AddButton({
     Name = "BenchTOggle2",
     Callback = function()
-        game:GetService("ReplicatedStorage").Remotes.BenchToggle:FireServer()
-        game:GetService("ReplicatedStorage").Remotes.BenchToggle:FireServer()
-        game:GetService("ReplicatedStorage").Remotes.BenchToggle:FireServer()
-        game:GetService("ReplicatedStorage").Remotes.BenchToggle:FireServer()
-        game:GetService("ReplicatedStorage").Remotes.BenchToggle:FireServer()
         game:GetService("ReplicatedStorage").Remotes.BenchToggle:FireServer()
 wait()
     end
